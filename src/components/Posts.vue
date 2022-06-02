@@ -11,7 +11,13 @@
             <video autoplay loop muted playsinline class="h-72 w-full object-cover"><source :src="post.imageUrl" alt="" type="video/mp4" /></video>
           </div>
           <div v-else class="flex-shrink-0">
-            <ix-img class="h-72 w-full object-cover" :src="post.imageUrl" alt="" sizes="(min-width: 1344px) 630px, (min-width: 1024px) 40vw, (min-width: 545px) 512px, 90vw" />
+            <ix-img
+              class="h-72 w-full object-cover"
+              :src="post.imageUrl"
+              alt=""
+              :imgixParams="{ fit: 'crop', ar: '2:1', crop: 'faces,edges'}"
+              sizes="(min-width: 1344px) 630px, (min-width: 1024px) 40vw, (min-width: 545px) 512px, 90vw"
+            />
           </div>
           <div class="flex-1 bg-white p-6 flex flex-col justify-between">
             <div class="flex-1">
